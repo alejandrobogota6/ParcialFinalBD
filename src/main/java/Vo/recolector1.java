@@ -9,17 +9,17 @@ package Vo;
  *
  * @author JCBOT
  */
-public class recolector {
+public class recolector1 {
     
     private int id;
     private String nombre;
 
-    public recolector(int id, String nombre) {
+    public recolector1(int id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
 
-    public recolector() {
+    public recolector1() {
     }
 
     public int getId() {

@@ -20,7 +20,7 @@ public class operaciones {
 
     public Map<Integer, String> listar() throws SQLException {
 
-        Crud_recolector re = new Crud_recolector();
+        recolector re = new recolector();
         Crud_recoleccion recolec = new Crud_recoleccion();
         List<recolector> application1 = re.findAll();
         List<recoleccionfi> application2 = recolec.findAll();

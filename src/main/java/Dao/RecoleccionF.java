@@ -5,7 +5,7 @@
  */
 package Dao;
 
-import Vo.recoleccionfi;
+import Vo.recoleccion1;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,10 +18,10 @@ import java.util.List;
  *
  * @author JCBOT
  */
-public class Crud_recoleccion {
+public class RecoleccionF {
 
-    public List<recoleccionfi> findAll() throws SQLException {
-        List<recoleccionfi> departamentos = null;
+    public List<recoleccion1> findAll() throws SQLException {
+        List<recoleccion1> departamentos = null;
         String query = "SELECT * FROM recoleccionfi";
         Connection connection = Conexion.getConnection();
         try {
@@ -35,10 +35,10 @@ public class Crud_recoleccion {
 
             while (rs.next()) {
                 if (departamentos == null) {
-                    departamentos = new ArrayList<recoleccionfi>();
+                    departamentos = new ArrayList<recoleccion1>();
                 }
 
-                recoleccionfi registro = new recoleccionfi();
+                recoleccion1 registro = new recoleccion1();
 
                 Fecha = rs.getString("Fecha");
                 registro.setFecha(Fecha);
@@ -64,7 +64,7 @@ public class Crud_recoleccion {
         return departamentos;
     }
 
-    public boolean insert(recoleccionfi t) throws SQLException {
+    public boolean insert(recoleccion1 t) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
         String query = " insert into recoleccionfi (Fecha,Recolector,Colmena,Kilosdemiel) " + "values (?,?,?,?)";
@@ -81,41 +81,6 @@ public class Crud_recoleccion {
         }
         return result;
     }
-//
-//    public boolean update(Esquema t) throws SQLException {
-//        boolean result = false;
-//        Connection connection = Conexion.getConnection();
-//        String query = "update Schemaa set NameSchema = ? where Idschema = ?";
-//        PreparedStatement preparedStmt = null;
-//        try {
-//            preparedStmt = connection.prepareStatement(query);
-//            preparedStmt.setString(1, t.getNameEsquema());
-//            preparedStmt.setInt(2, t.getIdEsquema());
-//            if (preparedStmt.executeUpdate() > 0) {
-//                result = true;
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return result;
-//    }
-//
-//    public boolean delete(Esquema t) throws SQLException {
-//        boolean result = false;
-//        Connection connection = Conexion.getConnection();
-//        String query = "delete from Schemaa where Idschema = ?";
-//        PreparedStatement preparedStmt = null;
-//        try {
-//            preparedStmt = connection.prepareStatement(query);
-//            preparedStmt.setInt(1, t.getIdEsquema());
-//            result = preparedStmt.execute();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return result;
-//    }
+
 
 }
