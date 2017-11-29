@@ -67,11 +67,11 @@ public class RecoleccionF {
     public boolean insert(recoleccion1 t) throws SQLException {
         boolean result = false;
         Connection connection = Conexion.getConnection();
-        String query = " insert into recoleccionfi (Fecha,Recolector,Colmena,Kilosdemiel) " + "values (?,?,?,?)";
+        String query = " insert into recoleccionfi (Recolector,Cajones,Kilosdemiel) " + "values (?,?,?)";
         PreparedStatement preparedStmt = null;
         try {
             preparedStmt = connection.prepareStatement(query);
-            preparedStmt.setString(1, t.getFecha());
+            
             preparedStmt.setString(2, t.getRecolector());
             preparedStmt.setString(3, t.getColmena());
             preparedStmt.setInt(4, t.getKilosdemiel());
